@@ -46,18 +46,21 @@ pipeline {
                 dockerHome = tool 'docker'
             }
             steps {
-                script {
-                    docker.withServer('tcp://dockerapp:2375', '') {                    
-                        docker.withRegistry('', registryCredential) {
-                        def dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                        dockerImage.push()
-                        dockerImage.push('latest')
-                        sh "docker rmi $registry:$BUILD_NUMBER"
-                        }
+               script {          
+                   if ( branchName == 'develop' || branchName == 'hotfix' ) {
+                     docker.withServer('tcp://dockerapp:2375', '') {                    
+                         docker.withRegistry('', registryCredential) {
+                            def dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                            dockerImage.push()
+                            dockerImage.push('latest')
+                            sh "docker rmi $registry:$BUILD_NUMBER"
+                            }
+                         }
                     }
                 }
             }
         }
+        
         stage("Deploy on k8s") {
             steps {
                 input ('Do you want to proceed?')

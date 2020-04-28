@@ -2,6 +2,7 @@ pipeline {
     environment {
         registry = "atosci/movieinfo"
         registryCredential = 'dockerhub_atosci'
+        branchName = "${BRANCH_NAME}"
     }
     agent any
     tools {

@@ -13,9 +13,6 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/movies")
 public class MovieResource {
 
-    @Value("${api.key}")
-    private String apiKey;
-
     @Autowired
     private RestTemplate restTemplate;
 

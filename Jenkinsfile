@@ -1,6 +1,7 @@
 pipeline {
     environment {
-        registry = "atosci/movieinfo"
+		app = "movie-info"
+        registry = "atosci/${app}"
         registryCredential = 'dockerhub_atosci'
         branchName = "${BRANCH_NAME}"
     }
@@ -68,6 +69,7 @@ pipeline {
                 withKubeConfig([credentialsId: 'Kubeconfig_file', serverUrl: 'https://kubeclustercontinuousintegration-dns-c66cbf56.hcp.westeurope.azmk8s.io:443']){
                     sh 'kubectl apply -f deploy.yaml -n ${BRANCH_NAME} '
                     sh 'kubectl apply -f service.yaml -n ${BRANCH_NAME} '
+					sh 'kubectl delete pods -l app=${app} -n ${BRANCH_NAME}'
                   }
             }
         }

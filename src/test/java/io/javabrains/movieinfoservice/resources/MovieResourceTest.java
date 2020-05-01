@@ -1,6 +1,8 @@
 package io.javabrains.movieinfoservice.resources;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.eq;
 
 import com.google.gson.Gson;
 import org.junit.Rule;
@@ -31,6 +33,9 @@ class MovieResourceTest {
 
 		Movie movieExpected = gson.fromJson(expected, Movie.class);
 		Movie movieActual = gson.fromJson(actual, Movie.class);
+
+		when(movieResource.getMovieInfo(eq(movieExpected.getTitle())))
+				.thenReturn(movieExpected.getTitle());
 
 		assertEquals(movieExpected.getTitle(), movieActual.getTitle());
 		assertEquals(movieExpected.getPlot(), movieActual.getPlot());

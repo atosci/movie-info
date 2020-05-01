@@ -22,22 +22,18 @@ class MovieResourceTest {
 
 	@Rule public MockitoRule rule = MockitoJUnit.rule();
 	
-	MovieResource movie = Mockito.mock(MovieResource.class);
-	
 	@Test
 	void testGetMovieInfo() {
 
-		String expected = movie.getMovieInfo("titanic");
-		String actual = movie.getMovieInfo("titanic");
+		MovieResource movieResource = new MovieResource();
+
+		String expected = "{\"Title\":\"Titanic\",\"Plot\":\"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.\",\"Year\":\"1997\",\"Genre\":\"Drama, Romance\",\"Director\":\"James Cameron\",\"Actors\":\"Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates\"}";
+		String actual = movieResource.getMovieInfo("titanic");
 
 		Gson gson = new Gson();
 
 		Movie movieExpected = gson.fromJson(expected, Movie.class);
 		Movie movieActual = gson.fromJson(actual, Movie.class);
-
-		when(movie.getMovieInfo(eq(movieExpected.getTitle())))
-				.thenReturn(String.valueOf(new Movie(movieExpected.getTitle(), movieExpected.getPlot(), movieExpected.getYear(),
-						movieExpected.getGenre(), movieExpected.getDirector(), movieExpected.getActors())));
 
 		assertEquals(movieExpected.getTitle(), movieActual.getTitle());
 		assertEquals(movieExpected.getPlot(), movieActual.getPlot());

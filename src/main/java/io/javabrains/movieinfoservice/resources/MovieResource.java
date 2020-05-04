@@ -4,15 +4,18 @@ import com.google.gson.Gson;
 import io.javabrains.movieinfoservice.models.Movie;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
 @RestController
 @RequestMapping("/movies")
 public class MovieResource {
 
-    @RequestMapping("/{movieTitle}")
+    @RequestMapping(path = "/{movieTitle}", method = GET)
     public String getMovieInfo(@PathVariable("movieTitle") String movieTitle) {
 
         RestTemplate restTemplate = new RestTemplate();

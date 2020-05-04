@@ -12,9 +12,5 @@ public class MovieInfoServiceApplication {
 		SpringApplication.run(MovieInfoServiceApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
 }
 

@@ -35,6 +35,8 @@ class MovieResourceTest {
 		assertEquals(movieExpected.getPlot(), movieActual.getPlot());
 		assertEquals(movieExpected.getGenre(), movieActual.getGenre());
 		assertEquals(movieExpected.getDirector(), movieActual.getDirector());
+		assertEquals(movieExpected.getYear(), movieActual.getYear());
+		assertEquals(movieExpected.getActors(), movieActual.getActors());
 
 	}
 

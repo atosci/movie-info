@@ -8,6 +8,7 @@ public class Movie {
     private String Genre;
     private String Director;
     private String Actors;
+    private String Poster;
 
     public Movie() { }
 
@@ -17,6 +18,10 @@ public class Movie {
 
     public String getPlot() {
         return Plot;
+    }
+
+    public String getPoster() {
+        return Poster;
     }
 
     public String getYear() {

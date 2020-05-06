@@ -1,10 +1,9 @@
-package io.javabrains.movieinfoservice.resources;
+package io.atos.movieinfoservice.resources;
 
 import com.google.gson.Gson;
-import io.javabrains.movieinfoservice.models.Movie;
+import io.atos.movieinfoservice.models.Movie;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 

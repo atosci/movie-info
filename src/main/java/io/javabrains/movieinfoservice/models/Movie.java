@@ -1,37 +1,38 @@
 package io.javabrains.movieinfoservice.models;
 
 public class Movie {
-    private String movieId;
-    private String name;
-    private String description;
 
-    public Movie(String movieId, String name, String description) {
-        this.movieId = movieId;
-        this.name = name;
-        this.description = description;
+    private String Title;
+    private String Plot;
+    private String Year;
+    private String Genre;
+    private String Director;
+    private String Actors;
+
+    public Movie() { }
+
+    public String getTitle() {
+        return Title;
     }
 
-    public String getMovieId() {
-        return movieId;
+    public String getPlot() {
+        return Plot;
     }
 
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
+    public String getYear() {
+        return Year;
     }
 
-    public String getName() {
-        return name;
+    public String getGenre() {
+        return Genre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getDirector() {
+        return Director;
     }
 
-    public String getDescription() {
-        return description;
+    public String getActors() {
+        return Actors;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

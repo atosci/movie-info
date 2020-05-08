@@ -1,4 +1,4 @@
-package io.javabrains.movieinfoservice.models;
+package io.atos.movieinfoservice.models;
 
 public class Movie {
 
@@ -18,6 +18,10 @@ public class Movie {
 
     public String getPlot() {
         return Plot;
+    }
+
+    public String getPoster() {
+        return Poster;
     }
 
     public String getYear() {

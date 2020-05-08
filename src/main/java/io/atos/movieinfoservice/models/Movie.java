@@ -20,10 +20,6 @@ public class Movie {
         return Plot;
     }
 
-    public String getPoster() {
-        return Poster;
-    }
-
     public String getYear() {
         return Year;
     }

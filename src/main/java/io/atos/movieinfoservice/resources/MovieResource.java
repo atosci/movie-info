@@ -9,11 +9,18 @@ import org.springframework.web.client.RestTemplate;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-
+/**
+ * @author Mohamed El Kawakibi
+ * @author Puck School
+ */
 @RestController
 @RequestMapping("/movies")
 public class MovieResource {
 
+    /** Get the information of the movie based on the movie title
+     * @param movieTitle - the title of the movie you wish to review
+     * @return JSON of Movie.class
+     */
     @RequestMapping(path = "/{movieTitle}", method = GET)
     public String getMovieInfo(@PathVariable("movieTitle") String movieTitle) {
 

@@ -1,6 +1,6 @@
 # Atosci movie database - microservice application
 
-## Introducation
+## Introduction
 Atosci movie database is a microservice application. That means that it is build up by more than one application, so not like monolithical application.
 Every microservice works individually but to make the application work as a whole you need every microservice working.
 

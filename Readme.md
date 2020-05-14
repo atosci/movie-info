@@ -6,6 +6,11 @@ Every microservice works individually but to make the application work as a whol
 
 The Atosci movie database is an application that let the user search for movie information on a web page. The application uses the api from OMDB to get the movie information.
 
+#### The purpose of this application
+
+This application will be used for the Jenkins pipeline to demonstrate that the pipeline can build, test and deploy the three microservices successfully.
+
+
 ## Microservices
 
 The application is build out of three microservices: Movie-info, Movie-rating and Movie-catalog.

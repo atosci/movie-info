@@ -26,7 +26,7 @@ public class MovieResource {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String response = restTemplate.getForObject("http://www.omdbapi.com/?t=" + movieTitle + "&apikey=cc323c12", String.class);
+        String response = restTemplate.getForObject("http://www.omdbapi.com/?t=" + movieTitle + "&apikey=", String.class);
 
         Gson gson = new Gson();
 
